@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get the R&amp;G Asian Essentials App</title>
+<meta name="description" content="Download the R&G Asian Essentials loyalty app for iOS and Android.">
+<style>
+  :root { --orange:#FC5505; --gold:#C9A24B; --cream:#FFF7EC; --ink:#1a1207; }
+  * { box-sizing:border-box; }
+  html,body { margin:0; height:100%; }
+  body {
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:radial-gradient(circle at 50% 0%, #2a1d0d 0%, var(--ink) 70%);
+    color:var(--cream); display:flex; align-items:center; justify-content:center;
+    text-align:center; padding:24px;
+  }
+  .card { max-width:380px; width:100%; }
+  h1 { font-size:26px; margin:0 0 6px; letter-spacing:.5px; }
+  .brand { color:var(--orange); }
+  p { opacity:.7; font-size:15px; margin:0 0 28px; line-height:1.5; }
+  a.btn {
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    text-decoration:none; color:#fff; background:var(--orange);
+    border-radius:999px; padding:15px 24px; font-size:16px; font-weight:600;
+    margin:12px 0; transition:transform .12s ease, opacity .12s ease;
+  }
+  a.btn.alt { background:transparent; border:1.5px solid var(--gold); color:var(--gold); }
+  a.btn:active { transform:scale(.97); }
+  .hint { font-size:12px; opacity:.45; margin-top:22px; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>Get the <span class="brand">R&amp;G</span> App</h1>
+    <p id="sub">Redirecting you to the right store…</p>
+    <a class="btn" id="ios" href="https://apps.apple.com/app/id6777284685">Download on the App Store</a>
+    <a class="btn alt" id="android" href="https://play.google.com/store/apps/details?id=com.rgasian.loyalty">Get it on Google Play</a>
+    <div class="hint">R&amp;G Asian Essentials &middot; Loyalty &amp; Rewards</div>
+  </div>
+<script>
+  (function () {
+    var ua = navigator.userAgent || navigator.vendor || window.opera || "";
+    var IOS = "https://apps.apple.com/app/id6777284685";
+    var ANDROID = "https://play.google.com/store/apps/details?id=com.rgasian.loyalty";
+    var isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+    var isAndroid = /android/i.test(ua);
+    if (isIOS) { location.replace(IOS); }
+    else if (isAndroid) { location.replace(ANDROID); }
+    else { document.getElementById("sub").textContent = "Choose your platform:"; }
+  })();
+</script>
+</body>
+</html>
