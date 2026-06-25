@@ -3,51 +3,320 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Get the Coffs Asian Essentials App</title>
-<meta name="description" content="Download the Coffs Asian Essentials loyalty app for iOS and Android.">
+<title>Coffs Asian Essentials — Loyalty &amp; Rewards App</title>
+<meta name="description" content="Collect stamps, earn 15% off, send money home and never miss a special — the free Coffs Asian Essentials app for iPhone and Android.">
+<meta name="theme-color" content="#1a1207">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Get the Coffs Asian Essentials App">
+<meta property="og:description" content="Collect stamps, earn 15% off, and send money home. Free on iPhone &amp; Android.">
+<meta property="og:image" content="assets/feature-graphic.png">
+<meta property="og:url" content="https://baguiosfinest.github.io/rg-download/">
+
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
-  :root { --orange:#FC5505; --gold:#C9A24B; --cream:#FFF7EC; --ink:#1a1207; }
-  * { box-sizing:border-box; }
-  html,body { margin:0; height:100%; }
-  body {
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    background:radial-gradient(circle at 50% 0%, #2a1d0d 0%, var(--ink) 70%);
-    color:var(--cream); display:flex; align-items:center; justify-content:center;
-    text-align:center; padding:24px;
+  :root{
+    --orange:#FC5505; --splash:#F26A1F; --gold:#C9A24B;
+    --cream:#FFF7EC; --ink:#1a1207; --ink-2:#2a1d0d;
+    --line:rgba(201,162,75,.22);
+    --display:"Bricolage Grotesque",-apple-system,system-ui,sans-serif;
+    --body:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
   }
-  .card { max-width:380px; width:100%; }
-  h1 { font-size:26px; margin:0 0 6px; letter-spacing:.5px; }
-  .brand { color:var(--orange); }
-  p { opacity:.7; font-size:15px; margin:0 0 28px; line-height:1.5; }
-  a.btn {
-    display:flex; align-items:center; justify-content:center; gap:10px;
-    text-decoration:none; color:#fff; background:var(--orange);
-    border-radius:999px; padding:15px 24px; font-size:16px; font-weight:600;
-    margin:12px 0; transition:transform .12s ease, opacity .12s ease;
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; font-family:var(--body); color:var(--cream);
+    background:var(--ink); line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(120% 90% at 50% -10%, #34250f 0%, var(--ink) 55%);
   }
-  a.btn.alt { background:transparent; border:1.5px solid var(--gold); color:var(--gold); }
-  a.btn:active { transform:scale(.97); }
-  .hint { font-size:12px; opacity:.45; margin-top:22px; }
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  .wrap{width:100%; max-width:1080px; margin:0 auto; padding:0 22px;}
+  .eyebrow{
+    font-family:var(--body); font-weight:600; font-size:12px;
+    letter-spacing:.18em; text-transform:uppercase; color:var(--gold);
+  }
+
+  /* ---- top bar ---- */
+  header.bar{
+    position:sticky; top:0; z-index:20;
+    backdrop-filter:blur(10px); background:rgba(26,18,7,.72);
+    border-bottom:1px solid var(--line);
+  }
+  .bar .wrap{display:flex; align-items:center; justify-content:space-between; height:62px;}
+  .logo{display:flex; align-items:center; gap:11px; font-family:var(--display); font-weight:700; font-size:16px; letter-spacing:-.01em;}
+  .logo img{width:34px; height:34px; border-radius:9px; box-shadow:0 2px 10px rgba(0,0,0,.4);}
+  .logo b{color:var(--orange); font-weight:800;}
+  .bar a.mini{
+    font-weight:600; font-size:14px; text-decoration:none; color:#fff;
+    background:var(--orange); padding:9px 16px; border-radius:999px;
+  }
+  .bar a.mini:hover{background:#ff6a1f;}
+
+  /* ---- hero ---- */
+  .hero{padding:54px 0 28px;}
+  .hero-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:40px; align-items:center;}
+  h1{
+    font-family:var(--display); font-weight:800;
+    font-size:clamp(34px,6vw,58px); line-height:1.02; letter-spacing:-.02em;
+    margin:14px 0 16px;
+  }
+  h1 .accent{color:var(--orange);}
+  .lede{font-size:clamp(16px,2.4vw,19px); color:rgba(255,247,236,.78); max-width:30ch; margin:0 0 26px;}
+
+  /* signature: stamp row */
+  .stamps{display:flex; align-items:center; gap:10px; margin:0 0 30px; flex-wrap:wrap;}
+  .stamp{
+    width:38px; height:38px; border-radius:50%;
+    border:2px dashed rgba(201,162,75,.55);
+    display:grid; place-items:center; font-size:16px; color:var(--gold);
+    flex:0 0 auto;
+  }
+  .stamp.on{
+    border:2px solid var(--orange); background:var(--orange); color:#fff;
+    box-shadow:0 4px 14px rgba(252,85,5,.4);
+  }
+  .stamp.reward{border:2px solid var(--gold); background:var(--gold); color:var(--ink); font-weight:700;}
+  .stamp-note{font-size:13px; color:rgba(255,247,236,.6); width:100%; margin-top:2px;}
+
+  .ctas{display:flex; gap:13px; flex-wrap:wrap;}
+  a.store{
+    display:inline-flex; align-items:center; gap:11px; text-decoration:none;
+    padding:13px 20px; border-radius:14px; min-width:188px;
+    background:#000; border:1px solid rgba(255,255,255,.16); color:#fff;
+    transition:transform .12s ease, border-color .12s ease;
+  }
+  a.store:hover{transform:translateY(-2px); border-color:rgba(255,255,255,.4);}
+  a.store:active{transform:scale(.98);}
+  a.store svg{width:26px; height:26px; flex:0 0 auto;}
+  a.store .lbl{text-align:left; line-height:1.15;}
+  a.store .lbl small{display:block; font-size:10.5px; opacity:.7; letter-spacing:.04em;}
+  a.store .lbl span{font-size:17px; font-family:var(--display); font-weight:700;}
+  a.store.suggested{outline:2px solid var(--orange); outline-offset:2px;}
+  .suggest-tag{font-size:12px; color:var(--gold); margin:14px 0 0; min-height:16px;}
+
+  /* phone */
+  .phone-stage{display:flex; justify-content:center; position:relative;}
+  .phone{
+    width:min(280px,78vw); border-radius:38px; padding:11px;
+    background:linear-gradient(160deg,#3a2912,#1a1207);
+    border:1px solid rgba(201,162,75,.3);
+    box-shadow:0 30px 70px -20px rgba(0,0,0,.8), 0 0 0 1px rgba(0,0,0,.5) inset;
+  }
+  .phone img{border-radius:28px; width:100%;}
+  .glow{position:absolute; inset:auto; width:340px; height:340px; border-radius:50%;
+    background:radial-gradient(circle, rgba(252,85,5,.35), transparent 65%); filter:blur(20px); z-index:-1;}
+
+  /* ---- features ---- */
+  section{padding:56px 0;}
+  .sec-head{text-align:center; max-width:620px; margin:0 auto 40px;}
+  .sec-head h2{font-family:var(--display); font-weight:800; font-size:clamp(26px,4vw,38px); letter-spacing:-.02em; margin:10px 0 8px;}
+  .sec-head p{color:rgba(255,247,236,.7); margin:0;}
+  .feats{display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}
+  .feat{
+    background:rgba(255,247,236,.035); border:1px solid var(--line);
+    border-radius:18px; padding:22px 20px;
+  }
+  .feat .ic{width:42px; height:42px; border-radius:11px; display:grid; place-items:center;
+    background:rgba(252,85,5,.14); margin-bottom:14px; font-size:22px;}
+  .feat h3{font-family:var(--display); font-weight:700; font-size:17px; margin:0 0 6px;}
+  .feat p{margin:0; font-size:14px; color:rgba(255,247,236,.68);}
+
+  /* ---- gallery ---- */
+  .gallery{display:flex; gap:18px; overflow-x:auto; padding:6px 22px 18px; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;}
+  .gallery::-webkit-scrollbar{height:8px;}
+  .gallery::-webkit-scrollbar-thumb{background:var(--line); border-radius:99px;}
+  .shot{flex:0 0 auto; width:230px; scroll-snap-align:center;}
+  .shot img{border-radius:24px; border:1px solid var(--line); box-shadow:0 18px 40px -22px rgba(0,0,0,.8);}
+  .shot p{text-align:center; font-size:13px; color:rgba(255,247,236,.6); margin:12px 0 0;}
+
+  /* ---- how / steps ---- */
+  .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; counter-reset:s;}
+  .step{position:relative; padding:26px 22px; border:1px solid var(--line); border-radius:18px; background:rgba(255,247,236,.03);}
+  .step::before{counter-increment:s; content:counter(s); font-family:var(--display); font-weight:800;
+    font-size:38px; color:var(--orange); line-height:1; display:block; margin-bottom:12px;}
+  .step h3{font-family:var(--display); font-weight:700; font-size:18px; margin:0 0 6px;}
+  .step p{margin:0; font-size:14px; color:rgba(255,247,236,.7);}
+
+  /* ---- final cta / qr ---- */
+  .final{
+    text-align:center; background:linear-gradient(160deg, rgba(252,85,5,.16), rgba(201,162,75,.06));
+    border:1px solid var(--line); border-radius:28px; padding:46px 26px; margin:10px auto 0;
+  }
+  .final h2{font-family:var(--display); font-weight:800; font-size:clamp(26px,4vw,40px); letter-spacing:-.02em; margin:0 0 10px;}
+  .final p{color:rgba(255,247,236,.75); margin:0 0 26px;}
+  .final .ctas{justify-content:center;}
+  .qr{margin-top:30px; display:inline-flex; flex-direction:column; align-items:center; gap:10px;}
+  .qr img{width:130px; height:130px; border-radius:14px; background:#fff; padding:9px;}
+  .qr span{font-size:13px; color:rgba(255,247,236,.6);}
+
+  footer{border-top:1px solid var(--line); margin-top:60px; padding:30px 0 44px;}
+  footer .wrap{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-between; align-items:center;
+    font-size:13px; color:rgba(255,247,236,.55);}
+  footer a{color:var(--gold); text-decoration:none;}
+
+  @media (max-width:780px){
+    .hero-grid{grid-template-columns:1fr; gap:34px; text-align:center;}
+    .lede,.stamps{margin-left:auto; margin-right:auto;}
+    .stamps{justify-content:center;}
+    .ctas{justify-content:center;}
+    .hero{padding-top:34px;}
+    .phone-stage{order:-1;}
+    .feats{grid-template-columns:repeat(2,1fr);}
+    .steps{grid-template-columns:1fr;}
+  }
+  @media (max-width:430px){ .feats{grid-template-columns:1fr;} }
+  @media (prefers-reduced-motion:reduce){ *{scroll-behavior:auto; transition:none!important;} html{scroll-behavior:auto;} }
 </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Get the <span class="brand">Coffs</span> Asian Essentials App</h1>
-    <p id="sub">Redirecting you to the right store…</p>
-    <a class="btn" id="ios" href="https://apps.apple.com/app/id6777284685">Download on the App Store</a>
-    <a class="btn alt" id="android" href="https://play.google.com/store/apps/details?id=com.rgasian.loyalty">Get it on Google Play</a>
-    <div class="hint">Coffs Asian Essentials &middot; Loyalty &amp; Rewards</div>
+
+<header class="bar">
+  <div class="wrap">
+    <div class="logo"><img src="assets/logo.png" alt=""><span>Coffs <b>Asian Essentials</b></span></div>
+    <a class="mini" href="#get">Get the app</a>
   </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Loyalty &amp; Rewards · Free</span>
+        <h1>Every shop gets you <span class="accent">closer to a reward.</span></h1>
+        <p class="lede">Scan once at the counter, collect a stamp each visit, and unlock 15% off. All from your phone.</p>
+
+        <!-- signature: the stamp card -->
+        <div class="stamps" aria-label="Six stamps earns a reward">
+          <span class="stamp on">✓</span>
+          <span class="stamp on">✓</span>
+          <span class="stamp on">✓</span>
+          <span class="stamp on">✓</span>
+          <span class="stamp">5</span>
+          <span class="stamp reward">★</span>
+          <span class="stamp-note">6 stamps = 15% off your next shop</span>
+        </div>
+
+        <div class="ctas" id="get">
+          <a class="store" id="ios" href="https://apps.apple.com/app/id6777284685">
+            <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M16.36 12.78c.02-2.02 1.65-2.99 1.72-3.04-0.94-1.37-2.4-1.56-2.92-1.58-1.24-.13-2.42.73-3.05.73-.63 0-1.6-.71-2.63-.69-1.35.02-2.6.79-3.3 2-1.41 2.44-.36 6.05 1.01 8.03.67.97 1.47 2.06 2.51 2.02 1.01-.04 1.39-.65 2.61-.65 1.22 0 1.56.65 2.63.63 1.09-.02 1.78-.99 2.44-1.96.77-1.12 1.09-2.21 1.1-2.27-.02-.01-2.11-.81-2.13-3.21zM14.4 6.84c.56-.68.94-1.62.83-2.56-.81.03-1.79.54-2.37 1.21-.52.6-.97 1.56-.85 2.48.9.07 1.83-.46 2.39-1.13z"/></svg>
+            <span class="lbl"><small>Download on the</small><span>App Store</span></span>
+          </a>
+          <a class="store" id="android" href="https://play.google.com/store/apps/details?id=com.rgasian.loyalty">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#EA4335" d="M3.6 2.3c-.3.3-.5.7-.5 1.3v16.8c0 .6.2 1 .5 1.3l.1.1L13 12.1v-.2L3.7 2.2z"/><path fill="#FBBC04" d="M16.3 15.4 13 12.1v-.2l3.3-3.3.1.1 3.9 2.2c1.1.6 1.1 1.7 0 2.3z"/><path fill="#34A853" d="M16.4 15.3 13 12 3.6 21.7c.4.4 1 .4 1.7.1z"/><path fill="#4285F4" d="M16.4 8.7 5.3 2.2c-.7-.4-1.3-.3-1.7.1L13 12z"/></svg>
+            <span class="lbl"><small>Get it on</small><span>Google Play</span></span>
+          </a>
+        </div>
+        <p class="suggest-tag" id="suggest"></p>
+      </div>
+
+      <div class="phone-stage">
+        <div class="glow"></div>
+        <div class="phone"><img src="assets/03-loyalty-card.png" alt="The loyalty card screen showing collected stamps" width="280" height="600"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">What's inside</span>
+        <h2>More than a punch card</h2>
+        <p>The little things that make every visit worth it.</p>
+      </div>
+      <div class="feats">
+        <div class="feat"><div class="ic">🎟️</div><h3>Digital stamps</h3><p>No paper card to lose. Your stamps live on your phone and update the moment staff scan you.</p></div>
+        <div class="feat"><div class="ic">🎁</div><h3>15% off rewards</h3><p>Hit 6 stamps and your discount is ready to redeem at the counter.</p></div>
+        <div class="feat"><div class="ic">💸</div><h3>Send money home</h3><p>Check live remittance rates from RIA, MoneyGram and Western Union in one place.</p></div>
+        <div class="feat"><div class="ic">🏷️</div><h3>Weekly specials</h3><p>See what's on offer before you walk in. Never miss a deal on the essentials.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section style="padding-bottom:30px;">
+    <div class="wrap"><div class="sec-head">
+      <span class="eyebrow">A look inside</span>
+      <h2>Built to be simple</h2>
+    </div></div>
+    <div class="gallery">
+      <figure class="shot"><img src="assets/03-loyalty-card.png" alt="Loyalty card with stamps"><p>Your loyalty card</p></figure>
+      <figure class="shot"><img src="assets/04-qr-code.png" alt="Member QR code"><p>Scan to earn stamps</p></figure>
+      <figure class="shot"><img src="assets/06-offers.png" alt="Offers and rewards screen"><p>Rewards &amp; offers</p></figure>
+      <figure class="shot"><img src="assets/07-remittance.png" alt="Remittance rates screen"><p>Live remittance rates</p></figure>
+      <figure class="shot"><img src="assets/05-shop.png" alt="Shop specials screen"><p>This week's specials</p></figure>
+    </div>
+  </section>
+
+  <!-- HOW -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Three steps</span>
+        <h2>Start earning today</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>Install &amp; sign up</h3><p>Download free, then register in seconds with your name and phone number.</p></div>
+        <div class="step"><h3>Show your code</h3><p>Open your card and let staff scan your QR each time you shop.</p></div>
+        <div class="step"><h3>Collect &amp; redeem</h3><p>Watch your stamps add up. At 6, claim 15% off your next shop.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section style="padding-top:20px;">
+    <div class="wrap">
+      <div class="final">
+        <span class="eyebrow">Free on iPhone &amp; Android</span>
+        <h2>Get the app, get rewarded</h2>
+        <p>Join the regulars at Coffs Asian Essentials.</p>
+        <div class="ctas">
+          <a class="store" href="https://apps.apple.com/app/id6777284685">
+            <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M16.36 12.78c.02-2.02 1.65-2.99 1.72-3.04-0.94-1.37-2.4-1.56-2.92-1.58-1.24-.13-2.42.73-3.05.73-.63 0-1.6-.71-2.63-.69-1.35.02-2.6.79-3.3 2-1.41 2.44-.36 6.05 1.01 8.03.67.97 1.47 2.06 2.51 2.02 1.01-.04 1.39-.65 2.61-.65 1.22 0 1.56.65 2.63.63 1.09-.02 1.78-.99 2.44-1.96.77-1.12 1.09-2.21 1.1-2.27-.02-.01-2.11-.81-2.13-3.21zM14.4 6.84c.56-.68.94-1.62.83-2.56-.81.03-1.79.54-2.37 1.21-.52.6-.97 1.56-.85 2.48.9.07 1.83-.46 2.39-1.13z"/></svg>
+            <span class="lbl"><small>Download on the</small><span>App Store</span></span>
+          </a>
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.rgasian.loyalty">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#EA4335" d="M3.6 2.3c-.3.3-.5.7-.5 1.3v16.8c0 .6.2 1 .5 1.3l.1.1L13 12.1v-.2L3.7 2.2z"/><path fill="#FBBC04" d="M16.3 15.4 13 12.1v-.2l3.3-3.3.1.1 3.9 2.2c1.1.6 1.1 1.7 0 2.3z"/><path fill="#34A853" d="M16.4 15.3 13 12 3.6 21.7c.4.4 1 .4 1.7.1z"/><path fill="#4285F4" d="M16.4 8.7 5.3 2.2c-.7-.4-1.3-.3-1.7.1L13 12z"/></svg>
+            <span class="lbl"><small>Get it on</small><span>Google Play</span></span>
+          </a>
+        </div>
+        <div class="qr">
+          <img src="rg-download-qr.png" alt="QR code to download the app">
+          <span>On a computer? Scan to open on your phone.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© Coffs Asian Essentials · Loyalty &amp; Rewards</span>
+    <span><a href="https://apps.apple.com/app/id6777284685">App Store</a> · <a href="https://play.google.com/store/apps/details?id=com.rgasian.loyalty">Google Play</a></span>
+  </div>
+</footer>
+
 <script>
   (function () {
     var ua = navigator.userAgent || navigator.vendor || window.opera || "";
-    var IOS = "https://apps.apple.com/app/id6777284685";
-    var ANDROID = "https://play.google.com/store/apps/details?id=com.rgasian.loyalty";
     var isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
     var isAndroid = /android/i.test(ua);
-    if (isIOS) { location.replace(IOS); }
-    else if (isAndroid) { location.replace(ANDROID); }
-    else { document.getElementById("sub").textContent = "Choose your platform:"; }
+    var tag = document.getElementById("suggest");
+    if (isIOS) {
+      document.getElementById("ios").classList.add("suggested");
+      tag.textContent = "↑ Recommended for your iPhone";
+    } else if (isAndroid) {
+      document.getElementById("android").classList.add("suggested");
+      tag.textContent = "↑ Recommended for your Android";
+    }
   })();
 </script>
 </body>
